@@ -1,0 +1,146 @@
+{
+  "info": {
+    "_postman_id": "f3e64ecc-5e30-4314-92e9-9412a0247b3e",
+    "name": "NawaData",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "93987"
+  },
+  "item": [
+    {
+      "name": "http://localhost:8000/api/orders/100129/payment",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/orders/101461/payment",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "orders",
+            "101461",
+            "payment"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8000/api/orders_detail/100134",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/orders_detail/100134",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "orders_detail",
+            "100134"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8000/api/orders",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8000/api/store",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n  {\r\n    \"user_id\": 311,\r\n    \"status\": \"pending\",\r\n    \"items\": [\r\n      {\"product_id\": 301, \"quantity\": 2, \"price\": 50000},\r\n      {\"product_id\": 302, \"quantity\": 1, \"price\": 25000}\r\n    ]\r\n  },\r\n  {\r\n    \"user_id\": 333,\r\n    \"items\": [\r\n      {\"product_id\": 303, \"quantity\": 1, \"price\": 75000}\r\n    ]\r\n  }\r\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/store",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "store"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8000/api/report",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/report",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "report"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
