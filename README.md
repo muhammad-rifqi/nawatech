@@ -37,6 +37,7 @@
     <li>open di redis server & redis client and the with "ping" , and the output the "pong"</li>
     <li>Run the k6 app and write the command "k6 run script.js"</li>
     <li>then open terminal in visual studio code , write command composer install</li>
+    <li>Run the command "php artisan serve".</li>
     <li>then test with postman or something else from api provide</li>
 </ul>
 </p>
