@@ -13,6 +13,16 @@ redis
 SELECT 1
 KEYS *
 
+php artisan tinker
+App\Jobs\ProcessPaymentJob::dispatch(1);
+
+php artisan queue:work redis -v // php artisan queue:work redis
+php artisan config:clear
+php artisan cache:clear
+php artisan config:cache
+
+QUEUE_CONNECTION=redis
+
 contoh data 
 [
   {
