@@ -1,0 +1,32 @@
+notasi bigO = notasi untuk mengecek kecepatan load data dengan jumlah banyak. forloop
+eager load / nested load = mengambil query sekali supaya menghindari query berulang (with() & load())
+N+1 (N+1 Query Problem) = masalah performa database yang terjadi ketika aplikasi menjalankan 1 query utama + N query tambahan untuk mengambil relasi data. (ORM tanpa eager load)
+
+
+php artisan make:controller AnggotaController --resource // membuat controller
+
+php artisan make:model Anggota membuat model
+
+
+redis 
+--------
+SELECT 1
+KEYS *
+
+contoh data 
+[
+  {
+    "user_id": 400,
+    "status": "completed",
+    "items": [
+      {"product_id": 301, "quantity": 2, "price": 50000},
+      {"product_id": 302, "quantity": 1, "price": 25000}
+    ]
+  },
+  {
+    "user_id": 500,
+    "items": [
+      {"product_id": 303, "quantity": 1, "price": 75000}
+    ]
+  }
+]
