@@ -18,10 +18,11 @@
 <ul>
     <li>Clone this repository : <a href="https://github.com/muhammad-rifqi/nawatech.git">https://github.com muhammad-rifqi/nawatech.git</a> </li>
     <li>the github repo is public repo.</li>
-    <li>install XAMPP with PHP version is 8.1+</li>
+    <li>install XAMPP with PHP version is 8.1+ , <a href="https://www.apachefriends.org/download.html">Download</a></li>
     <li>install the Redis server & client according Project Architecture</li>
-    <li>Make Sure redis server & client in the C:\Redis.*** of path</li>
-    <li>install K6 after download from the above link</li>
+    <li>extract file to C:\\Redis.***</li>
+    <li>Make Sure redis server & client in the C:\Redis.*** of path <a href="https://i.sstatic.net/I0Btt.png">View</a> </li>
+    <li>install K6 after download from the above link <a href="https://www.youtube.com/watch?v=eVmcDt5C8io"> Detail Instalation </a></li>
     <li>after K6 installed open the terminal and write the command "K6" to the make sure running on the enviroment </li>
     <li>then navigate to the path folder "K6" in the nawatech project, and run the *k6 run script.js*</li>
     <li>make sure the infrastucture have been installed</li>
