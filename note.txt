@@ -6,7 +6,7 @@ N+1 (N+1 Query Problem) = masalah performa database yang terjadi ketika aplikasi
 php artisan make:controller AnggotaController --resource // membuat controller
 
 php artisan make:model Anggota membuat model
-
+pg_dump -U postgres -d nama_database -f C:\backup\nama_database.sql
 
 redis 
 --------
