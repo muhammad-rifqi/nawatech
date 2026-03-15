@@ -23,3 +23,4 @@ Route::get('/orders', [App\Http\Controllers\OrdersController::class, 'index']);
 Route::post('/store', [App\Http\Controllers\OrdersController::class, 'store']);
 Route::get('/orders_detail/{id}', [App\Http\Controllers\OrdersController::class, 'show']);
 Route::post('/orders/{id}/payment', [App\Http\Controllers\OrdersController::class, 'update']);
+Route::get('/report', [App\Http\Controllers\OrdersController::class, 'report']);

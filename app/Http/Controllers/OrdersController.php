@@ -85,22 +85,24 @@ class OrdersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $status = $request->payment_status;
-
-        // $order = $this->orderService->updatePaymentStatus($id, $status);
-
-        // return response()->json([
-        //     'success' => true,
-        //     'data' => $order
-        // ]);
-
+    
         ProcessPaymentJob::dispatch($id);
-
         return response()->json([
             'success' => true,
             'message' => 'Payment is processing'
         ]);
 
+    }
+
+
+    public function report(): JsonResponse
+    {
+        $report = $this->orderService->getReport();
+
+        return response()->json([
+            'success' => true,
+            'data' => $report
+        ]);
     }
 
     /**

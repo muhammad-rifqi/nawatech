@@ -4,7 +4,9 @@ namespace App\Http\Repositories;
 
 use App\Http\Repositories\OrderRepository;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use App\Models\Orders;
+
 
 class OrderRepository
 {
@@ -86,5 +88,38 @@ class OrderRepository
         Cache::forget("order_detail_{$id}");
 
         return $this->getOrdersDetails($id);
+    }
+
+    public function getReport()
+    {
+        return Cache::remember('report', 60, function () {
+
+            $stats = DB::table('orders')
+                ->selectRaw('
+                    SUM(total_amount) as total_revenue,
+                    COUNT(*) as total_orders,
+                    AVG(total_amount) as average_order_value
+                ')
+                ->first();
+
+            $topProducts = DB::table('order_items')
+                ->join('products', 'products.id', '=', 'order_items.product_id')
+                ->select(
+                    'products.id',
+                    'products.name',
+                    DB::raw('SUM(order_items.quantity) as sold')
+                )
+                ->groupBy('products.id', 'products.name')
+                ->orderByDesc('sold')
+                ->limit(3)
+                ->get();
+
+            return [
+                'total_revenue' => $stats->total_revenue,
+                'total_orders' => $stats->total_orders,
+                'average_order_value' => round($stats->average_order_value, 2),
+                'top_products' => $topProducts
+            ];
+        });
     }
 }

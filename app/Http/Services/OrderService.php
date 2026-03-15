@@ -56,4 +56,9 @@ class OrderService
 
         });
     }
+
+    public function getReport()
+    {
+        return $this->orderRepository->getReport();
+    }
 }
