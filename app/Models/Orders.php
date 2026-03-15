@@ -9,7 +9,12 @@ class Orders extends Model
 {
     use HasFactory;
     protected $table = 'orders';
-    protected $fillable = ['user_id'];
+    protected $fillable = [
+        'user_id',
+        'status',
+        'payment_status',
+        'total_amount'
+    ];
 
     public function user()
     {

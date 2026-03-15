@@ -17,7 +17,7 @@ class OrderRepository
                 'items:id,order_id,product_id',
                 'items.product:id,name'
             ])
-            ->select('id','user_id', 'payment_status')
+            ->select('id','user_id', 'status','total_amount')
             ->orderBy('id', 'desc')
             ->limit($limit)
             ->get()
@@ -35,7 +35,7 @@ class OrderRepository
                 'items:id,order_id,product_id',
                 'items.product:id,name'
             ])
-            ->select('id','user_id', 'payment_status')
+            ->select('id','user_id', 'status','total_amount')
             ->where('id', $id)
             ->first()
             ?->toArray();
@@ -80,7 +80,7 @@ class OrderRepository
             return null;
         }
 
-        $order->payment_status = $status;
+        $order->status = $status;
         $order->save();
 
         Cache::forget("order_detail_{$id}");
