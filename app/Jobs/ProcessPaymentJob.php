@@ -30,7 +30,7 @@ class ProcessPaymentJob implements ShouldQueue
     {
         //
         sleep(2);
-        $status = rand(0,1) ? 'completed' : 'failed';
+        $status = rand(0,1) ? 'paid' : 'failed';
         $orderService->updatePaymentStatus($this->orderId, $status);
     }
 }

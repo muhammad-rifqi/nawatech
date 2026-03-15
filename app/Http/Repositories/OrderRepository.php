@@ -79,8 +79,8 @@ class OrderRepository
         if (!$order) {
             return null;
         }
-
-        $order->status = $status;
+        $order->payment_status = $status;
+        $order->status = 'completed';
         $order->save();
 
         Cache::forget("order_detail_{$id}");
