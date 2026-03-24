@@ -40,3 +40,5 @@ contoh data
     ]
   }
 ]
+
+k6 run script.js
