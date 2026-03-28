@@ -10,7 +10,7 @@ use App\Models\Orders;
 
 class OrderRepository
 {
-    public function getOrders($limit = 1000)
+    public function getOrders($limit = 10000)
     {
        return Cache::remember("orders_limit_{$limit}", 600, function () use ($limit) {
 

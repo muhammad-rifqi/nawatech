@@ -15,7 +15,7 @@ class OrderService
 
     public function getOrders()
     {
-        $orders = $this->orderRepository->getOrders(1000);
+        $orders = $this->orderRepository->getOrders(10000);
 
         return $orders;
     }
